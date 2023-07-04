@@ -52,4 +52,6 @@ int main(
             arv
         );
     simple.update_string();
+    
+    return (0);
 }
