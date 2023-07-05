@@ -1,25 +1,30 @@
-#ifndef  PHONE_HPP
-# define PHONE_HPP
+#ifndef     PHONE_HPP
+# define    PHONE_HPP
 
-class Phone
+# include   <string>
+
+using       namespace std;
+
+class       Phone
 {
 private:
-    std::string nation_code;
-    std::string number;
+    string  nation_code;
+    string  number;
 
 public:
-    Phone(
-        std::string _nation_code,
-        std::string _number
-    );
+    Phone();
+    Phone(const Phone& other);
 
-    std::string getNationCode(void);
-    int         setNationCode(std::string _nation_code);
+    string  getNationCode() const;
+    int     setNationCode(const string _nation_code);
 
-    std::string getNumber(void);
-    int         setNumber(std::string _number);
+    string  getNumber() const;
+    int     setNumber(const string _number);
 
-    std::string getPhone(void);
-}
+    string  getPhone() const;
+
+    bool    operator<(const Phone& other) const;
+    bool    operator==(const Phone& other) const;
+};
 
 #endif

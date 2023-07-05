@@ -7,10 +7,12 @@
 # include "Content.hpp"
 # include "Utils.hpp"
 
+using namespace std;
+
 class Contacts
 {
 private:
-    std::map<Phone, Content> contacts;
+    map<Phone, Content> contacts;
 
 public:
     Contacts();
@@ -19,7 +21,7 @@ public:
     int search(void);
     int remove(void);
     int bookmark(void);
-    int exit(void);
-}
+    int finish(void);
+};
 
 #endif
