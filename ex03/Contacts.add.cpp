@@ -115,8 +115,8 @@ int         Contacts::add(void)
         this->contacts.insert({_phone, _content});
         if (siz_bef == this->contacts.size())
             cout    << BOL << MAG << "[ADD]           " << RES
-                    << BOL << RED << "[FAILURE]" << RES
-                    << " Duplicated number." << endl;
+                    << BOL << RED << "[FAILURE] " << RES
+                    << "Duplicated number." << endl;
         else
             cout    << BOL << MAG << "[ADD]           " << RES
                     << BOL << GRE << "[SUCCESS] " << RES

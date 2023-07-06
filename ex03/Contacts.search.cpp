@@ -80,7 +80,7 @@ int         Contacts::search(void)
             cout    << BOL << RED << "[ERROR]         " << RES
                     << "Invalid index." << endl;
         else if (stoi(choice) <= 0 ||
-                stoi(choice) > index)
+                stoi(choice) >= index)
             cout    << BOL << RED << "[ERROR]         " << RES
                     << "Invalid index." << endl;
         else
