@@ -23,7 +23,7 @@ public:
     int     setNickname(const string _nickname);
 
     bool    getBookmark(void) const;
-    void    toggleBookmark(void);
+    int     setBookmark(const bool _bookmark);
 };
 
 #endif

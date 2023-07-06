@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class SimpleString
 {
 public:
@@ -20,7 +22,7 @@ public:
 
     void    update_string()
     {
-        std::string rst;
+        string rst;
 
         for(int i=2; i<this->arc; i++) {
             rst.append(arv[i]);
@@ -30,12 +32,12 @@ public:
 
         for(int i=0; i<rst.size(); i++) {
             if (this->flg == 0)
-                std::cout << (char)std::toupper(rst[i]);
+                cout << (char)toupper(rst[i]);
             else
-                std::cout << (char)std::tolower(rst[i]);
+                cout << (char)tolower(rst[i]);
         }
 
-        std::cout << std::endl;
+        cout << endl;
     }
 };
 
@@ -47,7 +49,7 @@ int main(
 
     SimpleString simple =
         SimpleString(
-            std::string(arv[1]).compare("up"),
+            string(arv[1]).compare("up"),
             arc,
             arv
         );

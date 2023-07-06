@@ -16,12 +16,12 @@
 
 # include   <string>
 # include   <iostream>
+# include   <stdio.h>
 
 using namespace std;
 
 int         isNumeric(const string str);
 string      to_lowercase(const string _str);
-void        clean_cin(void);
 void        print_welcome(void);
 void        print_header(void);
 

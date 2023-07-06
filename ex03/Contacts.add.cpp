@@ -17,7 +17,7 @@ int         Contacts::add(void)
                 << "Example: [Kwanho Kim] " << endl
                 << BOL << YEL << "                " << RES
                 << ": ";
-        cin     >> name;
+        getline(cin, name, '\n');
         if (name.compare("/exit") == 0)
         {
             is_exit = true;
@@ -29,8 +29,6 @@ int         Contacts::add(void)
             cout<< BOL << RED << "[ERROR]         " << RES
                 << "The name is something wrong. Check again. [" << name << "]" << endl;
     }
-    clean_cin();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     while(!is_exit)
     {
@@ -38,7 +36,7 @@ int         Contacts::add(void)
                 << "Example: [kkim] " << endl
                 << BOL << YEL << "                " << RES
                 << ": ";
-        cin     >> nickname;
+        getline(cin, nickname, '\n');
         if (nickname.compare("/exit") == 0)
         {
             is_exit = true;
@@ -50,7 +48,6 @@ int         Contacts::add(void)
             cout<< BOL << RED << "[ERROR]         " << RES
                 << "The nickname is something wrong. Check again. [" << nickname << "]" << endl;
     }
-    clean_cin();
 
     while(!is_exit)
     {
@@ -60,7 +57,7 @@ int         Contacts::add(void)
                 << ": Warning: only numbers(1~999) are allowed." << endl
                 << BOL << YEL << "                " << RES
                 << ": ";
-        cin     >> nation_code;
+        getline(cin, nation_code, '\n');
         if (nation_code.compare("/exit") == 0)
         {
             is_exit = true;
@@ -72,7 +69,6 @@ int         Contacts::add(void)
             cout<< BOL << RED << "[ERROR]         " << RES
                 << "The nation code is something wrong. Check again. [" << nation_code << "]" << endl;
     }
-    clean_cin();
 
     while(!is_exit)
     {
@@ -82,7 +78,7 @@ int         Contacts::add(void)
                 << ": Warning: only numbers are allowed. The max length is 15, min length is 5." << endl
                 << BOL << YEL << "                " << RES
                 << ": ";
-        cin     >> number;
+        getline(cin, number, '\n');
         if (number.compare("/exit") == 0)
         {
             is_exit = true;
@@ -94,7 +90,6 @@ int         Contacts::add(void)
             cout<< BOL << RED << "[ERROR]         " << RES
                 << "The number is something wrong. Check again. [" << number << "]" << endl;
     }
-    clean_cin();
 
     while(!is_exit)
     {
@@ -102,14 +97,13 @@ int         Contacts::add(void)
                 << "Are you going to bookmark this contact? (y/n)" << endl
                 << BOL << YEL << "                " << RES
                 << ": ";
-        cin     >> bookmark;
+        getline(cin, bookmark, '\n');
         if (bookmark.compare("/exit") == 0)
             is_exit = true;
         else if (bookmark.compare("y") == 0)
-            _content.toggleBookmark();
+            _content.setBookmark(true);
         break;
     }
-    clean_cin();
 
     if (is_exit == true)
         cout    << BOL << MAG << "[ADD]           " << RES

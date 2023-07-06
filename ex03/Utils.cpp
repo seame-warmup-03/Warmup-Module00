@@ -19,12 +19,6 @@ string      to_lowercase(const string _str)
     return low;
 }
 
-void        clean_cin(void)
-{
-    cin.clear();
-    // cin.ignore(numeric_limits<streamsize>::max(), '\n');
-}
-
 void        print_welcome(void)
 {
     cout    << BOL << CYA << "[Content]" << RES << "       "
@@ -34,16 +28,16 @@ void        print_welcome(void)
 void        print_header(void)
 {
     cout    << endl;
-    cout    << BOL << CYA << "[Phonebook]" << RES << "     "
+    cout    << BOL << CYA << "[Phonebook]     " << RES
             << "What is your next step?" << RES << endl;
-    cout    << BOL << CYA << "           " << RES << "     "
+    cout    << BOL << CYA << "                " << RES << ""
             << BOL << MAG << "[ADD]" << RES << "      : " << "➕ Add some contact in your phonebook" << endl;
-    cout    << BOL << CYA << "           " << RES << "     "
-            << BOL << GRE << "[SEARCH]" << RES << "   : " << "📖 Search your phonebook with some keywords" << endl;
-    cout    << BOL << CYA << "           " << RES << "     "
+    cout    << BOL << CYA << "                " << RES
+            << BOL << GRE << "[SEARCH]" << RES << "   : " << "📖 Search and modify your contact" << endl;
+    cout    << BOL << CYA << "                " << RES
             << BOL << MAG << "[REMOVE]" << RES << "   : " << "❌ Remove someone from your phonebook" << endl;
-    cout    << BOL << BLU << "           " << RES << "     "
+    cout    << BOL << BLU << "                " << RES
             << BOL << GRE << "[BOOKMARK]" << RES << " : " << "🌟 List of contacts that you bookmarked before" << endl;
-    cout    << BOL << CYA << "           " << RES << "     "
+    cout    << BOL << CYA << "                " << RES
             << BOL << RED << "[EXIT]" << RES << "     : " << "☠️" << endl;
 }

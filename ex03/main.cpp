@@ -32,8 +32,7 @@ int         main(void)
         // input detecting part
         cout    << BOL << YEL << "[Input]" << RES << "         "
                 << BOL << tmp << RES << ": " << BOL;
-        clean_cin();
-        cin     >> tmp;
+        getline(cin, tmp, '\n');
         cout    << RES << endl;
         for(map<int, string>::iterator itr = features.begin(); itr != features.end(); itr++)
             if (to_lowercase(tmp) == itr->second)

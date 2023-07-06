@@ -29,7 +29,8 @@ bool    Content::getBookmark(void) const
     return (this->bookmark);
 }
 
-void    Content::toggleBookmark(void)
+int     Content::setBookmark(const bool _bookmark)
 {
-    this->bookmark = !this->bookmark;
+    this->bookmark = _bookmark;
+    return (SUCCESS);
 }
