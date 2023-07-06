@@ -2,6 +2,8 @@
 # define CONTACTS_HPP
 
 # include <map>
+# include <stdio.h>
+# include <iomanip>
 
 # include "Phone.hpp"
 # include "Content.hpp"
@@ -22,6 +24,8 @@ public:
     int remove(void);
     int bookmark(void);
     int finish(void);
+
+    int load(string file_name);
 };
 
 #endif

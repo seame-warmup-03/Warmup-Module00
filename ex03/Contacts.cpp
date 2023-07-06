@@ -2,12 +2,7 @@
 
 Contacts::Contacts() {}
 
-int     Contacts::search(void)
-{
-    cout    << BOL << GRE << "[SEARCH]         " << RES
-            << endl;
-    return (SUCCESS);
-}
+
 
 int     Contacts::bookmark(void)
 {
@@ -22,6 +17,7 @@ int     Contacts::finish(void)
             << "The program will terminated soon." << endl;
     cout    << BOL << RED << "                 " << RES
             << "Your progress will saved as " << BOL << "[phonebook.txt]" << RES << endl;
+    // file saving point
     exit(0);
     return (SUCCESS);
 }

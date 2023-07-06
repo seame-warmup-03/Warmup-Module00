@@ -1,6 +1,6 @@
-# include "Contacts.hpp"
+# include   "Contacts.hpp"
 
-int     Contacts::add(void)
+int         Contacts::add(void)
 {
     string  name, nickname, nation_code, number, bookmark;
     bool    is_exit = false;
@@ -8,14 +8,14 @@ int     Contacts::add(void)
     Content _content;
     Phone   _phone;
 
-    cout    << BOL << MAG << "[ADD]            " << RES
+    cout    << BOL << MAG << "[ADD]           " << RES
             << "If you want to stop adding a contact, please input [/exit]." << endl;
 
     while(!is_exit)
     {
-        cout    << BOL << YEL << "[NAME]           " << RES
+        cout    << BOL << YEL << "[NAME]          " << RES
                 << "Example: [Kwanho Kim] " << endl
-                << BOL << YEL << "                 " << RES
+                << BOL << YEL << "                " << RES
                 << ": ";
         cin     >> name;
         if (name.compare("/exit") == 0)
@@ -26,7 +26,7 @@ int     Contacts::add(void)
         else if (_content.setName(name) == SUCCESS)
             break;
         else
-            cout<< BOL << RED << "[ERROR]          " << RES
+            cout<< BOL << RED << "[ERROR]         " << RES
                 << "The name is something wrong. Check again. [" << name << "]" << endl;
     }
     clean_cin();
@@ -34,9 +34,9 @@ int     Contacts::add(void)
 
     while(!is_exit)
     {
-        cout    << BOL << YEL << "[NICKNAME]       " << RES
+        cout    << BOL << YEL << "[NICKNAME]      " << RES
                 << "Example: [kkim] " << endl
-                << BOL << YEL << "                 " << RES
+                << BOL << YEL << "                " << RES
                 << ": ";
         cin     >> nickname;
         if (nickname.compare("/exit") == 0)
@@ -47,18 +47,18 @@ int     Contacts::add(void)
         else if (_content.setNickname(nickname) == SUCCESS)
             break;
         else
-            cout<< BOL << RED << "[ERROR]          " << RES
+            cout<< BOL << RED << "[ERROR]         " << RES
                 << "The nickname is something wrong. Check again. [" << nickname << "]" << endl;
     }
     clean_cin();
 
     while(!is_exit)
     {
-        cout    << BOL << YEL << "[NATION_CODE]    " << RES
+        cout    << BOL << YEL << "[NATION_CODE]   " << RES
                 << "Example: [82] [49]" << endl
-                << BOL << YEL << "                 " << RES
-                << ": ⚠️ Warning: only numbers(1~999) are allowed." << endl
-                << BOL << YEL << "                 " << RES
+                << BOL << YEL << "                " << RES
+                << ": Warning: only numbers(1~999) are allowed." << endl
+                << BOL << YEL << "                " << RES
                 << ": ";
         cin     >> nation_code;
         if (nation_code.compare("/exit") == 0)
@@ -69,18 +69,18 @@ int     Contacts::add(void)
         else if (_phone.setNationCode(nation_code) == SUCCESS)
             break;
         else
-            cout<< BOL << RED << "[ERROR]          " << RES
+            cout<< BOL << RED << "[ERROR]         " << RES
                 << "The nation code is something wrong. Check again. [" << nation_code << "]" << endl;
     }
     clean_cin();
 
     while(!is_exit)
     {
-        cout    << BOL << YEL << "[PHONE]          " << RES
+        cout    << BOL << YEL << "[PHONE]         " << RES
                 << "Example: [01026860096]" << endl
-                << BOL << YEL << "                 " << RES
-                << ": ⚠️ Warning: only numbers are allowed." << endl
-                << BOL << YEL << "                 " << RES
+                << BOL << YEL << "                " << RES
+                << ": Warning: only numbers are allowed. The max length is 15, min length is 5." << endl
+                << BOL << YEL << "                " << RES
                 << ": ";
         cin     >> number;
         if (number.compare("/exit") == 0)
@@ -91,16 +91,16 @@ int     Contacts::add(void)
         else if (_phone.setNumber(number) == SUCCESS)
             break;
         else
-            cout<< BOL << RED << "[ERROR]          " << RES
+            cout<< BOL << RED << "[ERROR]         " << RES
                 << "The number is something wrong. Check again. [" << number << "]" << endl;
     }
     clean_cin();
 
     while(!is_exit)
     {
-        cout    << BOL << YEL << "[ADD.bookmark]   " << RES
+        cout    << BOL << YEL << "[ADD.bookmark]  " << RES
                 << "Are you going to bookmark this contact? (y/n)" << endl
-                << BOL << YEL << "                 " << RES
+                << BOL << YEL << "                " << RES
                 << ": ";
         cin     >> bookmark;
         if (bookmark.compare("/exit") == 0)
@@ -112,7 +112,7 @@ int     Contacts::add(void)
     clean_cin();
 
     if (is_exit == true)
-        cout    << BOL << MAG << "[ADD]            " << RES
+        cout    << BOL << MAG << "[ADD]           " << RES
                 << BOL << RED << "[FAILURE]" << RES
                 << " canceled." << endl;
     else
@@ -120,11 +120,11 @@ int     Contacts::add(void)
         size_t  siz_bef = this->contacts.size();
         this->contacts.insert({_phone, _content});
         if (siz_bef == this->contacts.size())
-            cout    << BOL << MAG << "[ADD]            " << RES
+            cout    << BOL << MAG << "[ADD]           " << RES
                     << BOL << RED << "[FAILURE]" << RES
                     << " Duplicated number." << endl;
         else
-            cout    << BOL << MAG << "[ADD]            " << RES
+            cout    << BOL << MAG << "[ADD]           " << RES
                     << BOL << GRE << "[SUCCESS] " << RES
                     << _phone.getPhone() << endl;
     }

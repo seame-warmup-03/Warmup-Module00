@@ -17,8 +17,8 @@ string  Phone::getNationCode(void) const
 int     Phone::setNationCode(const string _nation_code)
 {
     if (isNumeric(_nation_code) == SUCCESS &&
-        stoi(_nation_code) > 0 &&
-        stoi(_nation_code) < 1000) {
+        _nation_code.length() >= 1 &&
+        _nation_code.length() <= 3) {
         this->nation_code = _nation_code;
         return (SUCCESS);
     } else {
@@ -33,7 +33,9 @@ string  Phone::getNumber(void) const
 
 int     Phone::setNumber(const string _number)
 {
-    if (isNumeric(_number) == SUCCESS) {
+    if (isNumeric(_number) == SUCCESS &&
+        _number.length() >= 5 &&
+        _number.length() <= 15) {
         this->number = _number;
         return (SUCCESS);
     } else {

@@ -12,8 +12,6 @@ int         Contacts::remove(void)
     cout    << BOL << YEL << "[INPUT]         " << RES
             << "You can remove by name, nickname, and phone number." << endl
             << BOL << YEL << "                " << RES
-            << "If you want to see the whole list of contacts, please empty the search keyword." << endl
-            << BOL << YEL << "                " << RES
             << ": ";
     cin     >> key;
 
